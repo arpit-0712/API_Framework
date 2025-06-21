@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="REST API Testing Framework Suite" verbose="1">
+    
+    <!-- Test Parameters -->
+    <parameter name="env" value="qa"/>
+    <parameter name="browser" value="chrome"/>
+    
+    <!-- Test Groups -->
+    <groups>
+        <run>
+            <include name="smoke"/>
+            <include name="regression"/>
+            <include name="api"/>
+            <exclude name="wip"/>
+        </run>
+    </groups>
+    
+    <!-- Test Classes -->
+    <test name="User API Tests" preserve-order="true">
+        <classes>
+            <class name="com.restassured.framework.tests.UserApiTests">
+                <methods>
+                    <include name="testGetAllUsers"/>
+                    <include name="testGetUserById"/>
+                    <include name="testCreateUser"/>
+                    <include name="testUpdateUser"/>
+                    <include name="testDeleteUser"/>
+                    <include name="testGetUserWithInvalidId"/>
+                    <include name="testCreateUserWithInvalidData"/>
+                    <include name="testGetUsersWithQueryParams"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Mock API Tests" preserve-order="true">
+        <classes>
+            <class name="com.restassured.framework.tests.MockApiTests">
+                <methods>
+                    <include name="testMockGetEndpoint"/>
+                    <include name="testMockPostEndpoint"/>
+                    <include name="testMockPutEndpoint"/>
+                    <include name="testMockDeleteEndpoint"/>
+                    <include name="testMockWithCustomHeaders"/>
+                    <include name="testMockWithDelay"/>
+                    <include name="testMockErrorResponse"/>
+                    <include name="testMockWithBodyMatching"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Parallel Execution Configuration -->
+    <test name="Parallel Tests" parallel="methods" thread-count="3">
+        <classes>
+            <class name="com.restassured.framework.tests.UserApiTests"/>
+            <class name="com.restassured.framework.tests.MockApiTests"/>
+        </classes>
+    </test>
+    
+</suite> 

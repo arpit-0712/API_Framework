@@ -1,0 +1,79 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+
+# Logs
+logs/
+*.log
+logback-test.xml
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test Reports
+target/allure-results/
+target/allure-report/
+target/extent-reports/
+*.html
+
+# Environment Files
+.env
+.env.local
+.env.production
+.env.staging
+*.properties.local
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Security
+secrets/
+credentials/
+*.key
+*.pem
+*.p12
+
+# Build Artifacts
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# Test Data (if contains sensitive information)
+testdata/sensitive/ 
